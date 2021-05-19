@@ -19,4 +19,10 @@ describe("Load AG Grid", () => {
       expect(el.isDisplayed()).to.eql(true);
     });
   });
+
+  it("Should <insert what is being validated>", () => {
+    /**
+     * Input your test scripts here
+     */
+  });
 });
