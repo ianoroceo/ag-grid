@@ -38,8 +38,12 @@ export class GridPage {
     return $$('span.ag-header-cell-text[unselectable]');
   }
   public static get contentInGrid() {
-    return $$('div[ref=eCheckbox] div input.ag-input-field-input.ag-checkbox-input');
+    return $('div[ref=eCheckbox] div input.ag-input-field-input.ag-checkbox-input');
   }
+  public static get nameSearchBox() {
+    return $('input.ag-floating-filter-input[aria-label='Name Filter Input']');
+  }
+  
   
   
   
