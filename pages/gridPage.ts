@@ -26,4 +26,25 @@ export class GridPage {
   public static get columnHeader() {
     return $$('[aria-rowindex="1"] > [role="columnheader"]');
   }
+  
+  /*
+  Modified By- Ritdhwaj Singh Chandel
+  Date-25/05/21
+  */
+  public static get primaryColumnHeadrs() {
+    return $$('span.ag-header-group-text:not(:empty)');
+  }
+  public static get secondaryColumnHeadrs() {
+    return $$('span.ag-header-cell-text[unselectable]');
+  }
+  public static get contentInGrid() {
+    return $('div[ref=eCheckbox] div input.ag-input-field-input.ag-checkbox-input');
+  }
+  public static get nameSearchBox() {
+    return $('input.ag-floating-filter-input[aria-label='Name Filter Input']');
+  }
+  
+  
+  
+  
 }
