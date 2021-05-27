@@ -49,5 +49,19 @@ export class GridPage {
   public static get secondarySidePanelValue() {
     return $$('.div.ag-column-select-virtual-list-item');
   }
+
+  public static get nameInputField() {
+    return $(`input.ag-floating-filter-input[aria-label='Name Filter Input']`);
+  }
+  public static get monthlyBreakDownInputField() {
+    return $(`input.ag-header-group-text[aria-label='Monthly Breakdown']`);
+  }
   
+  public static get filterResult() {
+    return $('input.ag-floating-filter-input');
+  }
+
+  public static get octInputField() {
+    return $(`input[aria-label='Oct Filter Input']`);
+  }
 };

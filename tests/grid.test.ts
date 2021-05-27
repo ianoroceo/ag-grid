@@ -26,7 +26,7 @@ describe("Load AG Grid", () => {
     /**
      * I'm using forEach here for readability purposes
      * The function iterates through the element array
-     * and checks if Primary column header labels are following.
+     * and checks each of Primary column header labels are following.
      * Participant,Game of Choice,Performance,Monthly Breakdown
      */
      GridPage.PrimaryColumn.forEach((ee) => {
@@ -41,7 +41,7 @@ describe("Load AG Grid", () => {
     /**
      * I'm using forEach here for readability purposes
      * The function iterates through the element array
-     * and checks if Primary column headers are there in sidebar.
+     * and checks each of Primary column headers are there in sidebar.
      * Participant,Game of Choice,Performance,Monthly Breakdown
      */
      GridPage.pivotPanelContainer.forEach((ee) => {
@@ -58,7 +58,7 @@ describe("Load AG Grid", () => {
      * I'm using forEach here for readability purposes
      * The function iterates through the element array
      * and checks if Secondary column headers are dispalyed 
-     * Check Secondary Panel headers are available in side bar.
+     * Check each Secondary Panel headers are available in side bar.
      */
      GridPage.secondaryPanel.forEach((ee) => {
       var secondarySidebarValue
@@ -68,9 +68,19 @@ describe("Load AG Grid", () => {
       GridPage.secondarySidePanelValue.forEach ((elem) => {
       expect(elem.isDisplayed()).to.eql(true);
       secondarySidebarValue = elem.getText();
-      console.log('secondarySidebarValue', secondarySidebarValue);
       expect (secondarycolumnText).to.equal(secondarySidebarValue);
       });
     });
   });
+
+  it ("Should able to filter using Name",() => {
+    GridPage.mainGrid.waitForDisplayed();
+    const filterValue = new Array("Gil","Tony","Isabella","Poppy");
+      for (var i=0;i<filterValue.length;i++){
+        GridPage.nameInputField.click();
+        GridPage.nameInputField.setValue(filterValue[i]);
+        expect(GridPage.filterResult.isDisplayed()).to.eql(true);
+      }
+    });
+
 });
